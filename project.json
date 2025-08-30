@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "13",
+  "repository_name": "model-ledger",
+  "title": "Model Ledger",
+  "package": "model_ledger",
+  "language": "python",
+  "field": "MLOps and artifact lifecycle",
+  "focus": "Content-addressed registry, lineage, CAS promotions, rollback and safe garbage collection",
+  "ai_connection": "Reproducible model releases and artifact provenance",
+  "smoke_commands": [
+    {
+      "name": "demo",
+      "args": []
+    },
+    {
+      "name": "evaluate",
+      "args": []
+    }
+  ],
+  "layout": {
+    "docs_root": "decisions",
+    "tests_root": "checks",
+    "tools_root": "tools",
+    "config_root": "settings",
+    "examples_root": "release_records",
+    "verifier": "tools/check_registry.py",
+    "source_roots": [
+      "src"
+    ],
+    "documents": {
+      "architecture": "decisions/artifact-paths.md",
+      "design": "decisions/registry-transactions.md",
+      "review": "decisions/integrity-checks.md",
+      "experiments": "decisions/promotion-runs.md",
+      "publishing": "decisions/sharing-ledger.md",
+      "validation": "decisions/verified-build.md"
+    }
+  }
+}
