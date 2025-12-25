@@ -1,0 +1,10 @@
+{
+  "purpose": "Documented library contracts; this file is not an implicit runtime configuration loader.",
+  "digest": "sha256",
+  "stream_chunk_bytes": 65536,
+  "maximum_blob_bytes": 268435456,
+  "maximum_manifests": 10000,
+  "initial_lease_seconds": 300,
+  "retained_environment_history": 2,
+  "metadata": "private local SQLite WAL and CAS directory"
+}
