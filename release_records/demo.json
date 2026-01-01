@@ -1,0 +1,136 @@
+{
+  "experiment": "actual_local_content_registry",
+  "model_inference_performed": false,
+  "dataset": {
+    "id": "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99",
+    "payload": {
+      "schema_version": 1,
+      "name": "training-data",
+      "kind": "dataset",
+      "version": 1,
+      "blobs": [
+        "e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30"
+      ],
+      "parents": [],
+      "metadata": {}
+    },
+    "lease_id": "1415f592c33e41af9ea1a4ce5255c5f2",
+    "lease_expires_at": 1300.0
+  },
+  "configuration": {
+    "id": "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+    "payload": {
+      "schema_version": 1,
+      "name": "training-config",
+      "kind": "config",
+      "version": 1,
+      "blobs": [
+        "c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6"
+      ],
+      "parents": [],
+      "metadata": {}
+    },
+    "lease_id": "dea410239bfc49638eeb88ee23ab9ca1",
+    "lease_expires_at": 1300.0
+  },
+  "model_versions": [
+    {
+      "id": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+      "payload": {
+        "schema_version": 1,
+        "name": "classifier",
+        "kind": "model",
+        "version": 1,
+        "blobs": [
+          "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069"
+        ],
+        "parents": [
+          "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+          "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+        ],
+        "metadata": {}
+      },
+      "lease_id": "7a4308d081b5415bb49072de018f293f",
+      "lease_expires_at": 1300.0
+    },
+    {
+      "id": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+      "payload": {
+        "schema_version": 1,
+        "name": "classifier",
+        "kind": "model",
+        "version": 2,
+        "blobs": [
+          "96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c"
+        ],
+        "parents": [
+          "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+          "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+        ],
+        "metadata": {}
+      },
+      "lease_id": "854cbf184f8c4f8399521408cde76f4e",
+      "lease_expires_at": 1300.0
+    }
+  ],
+  "first_release": {
+    "environment": "production",
+    "revision": 1,
+    "previous_manifest": null,
+    "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+    "action": "promote",
+    "actor": "local",
+    "created": 1000.0,
+    "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+    "entry_hash": "10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd"
+  },
+  "rollback": {
+    "environment": "production",
+    "revision": 3,
+    "previous_manifest": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+    "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+    "action": "rollback",
+    "actor": "local",
+    "created": 1000.0,
+    "previous_hash": "1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444",
+    "entry_hash": "c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a"
+  },
+  "environment": {
+    "revision": 3,
+    "manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b"
+  },
+  "audit_chain_verified": 3,
+  "leased_blob": {
+    "sha256": "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920",
+    "size": 23,
+    "lease_id": "f25858d6394f479f95b89b2c6de1015a",
+    "lease_expires_at": 1005.0
+  },
+  "gc_before_lease_expiry": {
+    "manifest_roots": 4,
+    "reachable_manifests": 4,
+    "protected_blobs": 5,
+    "swept_blobs": [],
+    "retained_history_per_environment": 2,
+    "expired_leases_removed": 0
+  },
+  "gc_after_lease_expiry": {
+    "manifest_roots": 4,
+    "reachable_manifests": 4,
+    "protected_blobs": 4,
+    "swept_blobs": [
+      "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920"
+    ],
+    "retained_history_per_environment": 2,
+    "expired_leases_removed": 1
+  },
+  "active_model_verified": {
+    "sha256": "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069",
+    "size": 19,
+    "verified": true
+  },
+  "limitations": [
+    "This is a local artifact-control-plane experiment, not trained-model accuracy.",
+    "Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented."
+  ]
+}
