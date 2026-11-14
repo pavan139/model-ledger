@@ -1,0 +1,830 @@
+{
+  "schema_version": 3,
+  "generated_at_utc": "2026-11-15T04:20:20.167502+00:00",
+  "repository": "model-ledger",
+  "field": "MLOps and artifact lifecycle",
+  "ai_connection": "Reproducible model releases and artifact provenance",
+  "language": "python",
+  "toolchain": null,
+  "source_sha256": "789fee20e6b2d5858f02513743f98b7801436062fdaf9e87597ca6d4e1e86f8c",
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+  "scope": "implemented_systems_and_controlled_cpu_experiments",
+  "tests_discovered": 17,
+  "tests_skipped": 0,
+  "tests_executed": 17,
+  "external_provider_calls": false,
+  "passed": true,
+  "checks": [
+    {
+      "name": "metadata_and_documentation",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "lint",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "All checks passed!\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "ruff",
+        "check",
+        "src",
+        "checks",
+        "tools"
+      ],
+      "seconds": 0.083212
+    },
+    {
+      "name": "format",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "6 files already formatted\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "ruff",
+        "format",
+        "--check",
+        "src",
+        "checks",
+        "tools"
+      ],
+      "seconds": 0.117904
+    },
+    {
+      "name": "compile",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "compileall",
+        "-q",
+        "src",
+        "checks",
+        "tools"
+      ],
+      "seconds": 0.06731
+    },
+    {
+      "name": "unit_tests",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "",
+      "stdout_truncated": false,
+      "stderr": "test_collected_old_revision_cannot_be_silently_rolled_back (test_registry.RegistryTests.test_collected_old_revision_cannot_be_silently_rolled_back) ... ok\ntest_concurrent_promoters_have_one_cas_winner (test_registry.RegistryTests.test_concurrent_promoters_have_one_cas_winner) ... ok\ntest_corruption_detected_before_read_or_promotion (test_registry.RegistryTests.test_corruption_detected_before_read_or_promotion) ... ok\ntest_crash_after_gc_commit_does_not_resurrect_collected_object (test_registry.RegistryTests.test_crash_after_gc_commit_does_not_resurrect_collected_object) ... ok\ntest_crashed_republication_of_tombstoned_blob_is_reconciled (test_registry.RegistryTests.test_crashed_republication_of_tombstoned_blob_is_reconciled) ... ok\ntest_executed_registry_experiment_checks_all_cases (test_registry.RegistryTests.test_executed_registry_experiment_checks_all_cases) ... ok\ntest_gc_and_promotion_race_cannot_create_a_dangling_active_reference (test_registry.RegistryTests.test_gc_and_promotion_race_cannot_create_a_dangling_active_reference) ... ok\ntest_gc_independent_reachability_and_expiring_leases (test_registry.RegistryTests.test_gc_independent_reachability_and_expiring_leases) ... ok\ntest_lease_renewal_protects_content_and_expired_lease_cannot_revive (test_registry.RegistryTests.test_lease_renewal_protects_content_and_expired_lease_cannot_revive) ... ok\ntest_lineage_hashes_are_immutable_and_versions_never_reused (test_registry.RegistryTests.test_lineage_hashes_are_immutable_and_versions_never_reused) ... ok\ntest_missing_or_invalid_parent_is_rejected_without_new_version (test_registry.RegistryTests.test_missing_or_invalid_parent_is_rejected_without_new_version) ... ok\ntest_process_crash_after_blob_link_recovers_verified_orphan (test_registry.RegistryTests.test_process_crash_after_blob_link_recovers_verified_orphan) ... ok\ntest_process_crash_during_gc_restores_rolled_back_quarantine (test_registry.RegistryTests.test_process_crash_during_gc_restores_rolled_back_quarantine) ... ok\ntest_promote_rollback_and_audit_chain (test_registry.RegistryTests.test_promote_rollback_and_audit_chain) ... ok\ntest_stale_environment_revision_cannot_move_reference (test_registry.RegistryTests.test_stale_environment_revision_cannot_move_reference) ... ok\ntest_streaming_expected_digest_and_content_dedup (test_registry.RegistryTests.test_streaming_expected_digest_and_content_dedup) ... ok\ntest_wrong_digest_and_text_stream_never_publish (test_registry.RegistryTests.test_wrong_digest_and_text_stream_never_publish) ... ok\n\n----------------------------------------------------------------------\nRan 17 tests in 1.383s\n\nOK\n",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "checks",
+        "-v"
+      ],
+      "seconds": 1.595626
+    },
+    {
+      "name": "demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"experiment\": \"actual_local_content_registry\",\n  \"model_inference_performed\": false,\n  \"dataset\": {\n    \"id\": \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\",\n    \"payload\": {\n      \"schema_version\": 1,\n      \"name\": \"training-data\",\n      \"kind\": \"dataset\",\n      \"version\": 1,\n      \"blobs\": [\n        \"e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30\"\n      ],\n      \"parents\": [],\n      \"metadata\": {}\n    },\n    \"lease_id\": \"0cc84b90512e488aa381a8dac712480f\",\n    \"lease_expires_at\": 1300.0\n  },\n  \"configuration\": {\n    \"id\": \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n    \"payload\": {\n      \"schema_version\": 1,\n      \"name\": \"training-config\",\n      \"kind\": \"config\",\n      \"version\": 1,\n      \"blobs\": [\n        \"c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6\"\n      ],\n      \"parents\": [],\n      \"metadata\": {}\n    },\n    \"lease_id\": \"187c39535b164b789c75386cc8350f4a\",\n    \"lease_expires_at\": 1300.0\n  },\n  \"model_versions\": [\n    {\n      \"id\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"classifier\",\n        \"kind\": \"model\",\n        \"version\": 1,\n        \"blobs\": [\n          \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\"\n        ],\n        \"parents\": [\n          \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n          \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n        ],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"d633b6ed73584c8188d77dd3a050fdc5\",\n      \"lease_expires_at\": 1300.0\n    },\n    {\n      \"id\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"classifier\",\n        \"kind\": \"model\",\n        \"version\": 2,\n        \"blobs\": [\n          \"96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c\"\n        ],\n        \"parents\": [\n          \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n          \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n        ],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"6854f75e34644078b377736f2320c46e\",\n      \"lease_expires_at\": 1300.0\n    }\n  ],\n  \"first_release\": {\n    \"environment\": \"production\",\n    \"revision\": 1,\n    \"previous_manifest\": null,\n    \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n    \"action\": \"promote\",\n    \"actor\": \"local\",\n    \"created\": 1000.0,\n    \"previous_hash\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n    \"entry_hash\": \"10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd\"\n  },\n  \"rollback\": {\n    \"environment\": \"production\",\n    \"revision\": 3,\n    \"previous_manifest\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n    \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n    \"action\": \"rollback\",\n    \"actor\": \"local\",\n    \"created\": 1000.0,\n    \"previous_hash\": \"1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444\",\n    \"entry_hash\": \"c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a\"\n  },\n  \"environment\": {\n    \"revision\": 3,\n    \"manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\"\n  },\n  \"audit_chain_verified\": 3,\n  \"leased_blob\": {\n    \"sha256\": \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\",\n    \"size\": 23,\n    \"lease_id\": \"5cb3af6f56a44f09b9000f7fef721d09\",\n    \"lease_expires_at\": 1005.0\n  },\n  \"gc_before_lease_expiry\": {\n    \"manifest_roots\": 4,\n    \"reachable_manifests\": 4,\n    \"protected_blobs\": 5,\n    \"swept_blobs\": [],\n    \"retained_history_per_environment\": 2,\n    \"expired_leases_removed\": 0\n  },\n  \"gc_after_lease_expiry\": {\n    \"manifest_roots\": 4,\n    \"reachable_manifests\": 4,\n    \"protected_blobs\": 4,\n    \"swept_blobs\": [\n      \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\"\n    ],\n    \"retained_history_per_environment\": 2,\n    \"expired_leases_removed\": 1\n  },\n  \"active_model_verified\": {\n    \"sha256\": \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\",\n    \"size\": 19,\n    \"verified\": true\n  },\n  \"limitations\": [\n    \"This is a local artifact-control-plane experiment, not trained-model accuracy.\",\n    \"Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "model_ledger",
+        "demo",
+        "--output",
+        "/tmp/cli-reports-12nwtg4a/demo.json"
+      ],
+      "seconds": 0.239729,
+      "report": {
+        "experiment": "actual_local_content_registry",
+        "model_inference_performed": false,
+        "dataset": {
+          "id": "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99",
+          "payload": {
+            "schema_version": 1,
+            "name": "training-data",
+            "kind": "dataset",
+            "version": 1,
+            "blobs": [
+              "e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30"
+            ],
+            "parents": [],
+            "metadata": {}
+          },
+          "lease_id": "0cc84b90512e488aa381a8dac712480f",
+          "lease_expires_at": 1300.0
+        },
+        "configuration": {
+          "id": "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+          "payload": {
+            "schema_version": 1,
+            "name": "training-config",
+            "kind": "config",
+            "version": 1,
+            "blobs": [
+              "c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6"
+            ],
+            "parents": [],
+            "metadata": {}
+          },
+          "lease_id": "187c39535b164b789c75386cc8350f4a",
+          "lease_expires_at": 1300.0
+        },
+        "model_versions": [
+          {
+            "id": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+            "payload": {
+              "schema_version": 1,
+              "name": "classifier",
+              "kind": "model",
+              "version": 1,
+              "blobs": [
+                "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069"
+              ],
+              "parents": [
+                "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+              ],
+              "metadata": {}
+            },
+            "lease_id": "d633b6ed73584c8188d77dd3a050fdc5",
+            "lease_expires_at": 1300.0
+          },
+          {
+            "id": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+            "payload": {
+              "schema_version": 1,
+              "name": "classifier",
+              "kind": "model",
+              "version": 2,
+              "blobs": [
+                "96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c"
+              ],
+              "parents": [
+                "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+              ],
+              "metadata": {}
+            },
+            "lease_id": "6854f75e34644078b377736f2320c46e",
+            "lease_expires_at": 1300.0
+          }
+        ],
+        "first_release": {
+          "environment": "production",
+          "revision": 1,
+          "previous_manifest": null,
+          "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+          "action": "promote",
+          "actor": "local",
+          "created": 1000.0,
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "entry_hash": "10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd"
+        },
+        "rollback": {
+          "environment": "production",
+          "revision": 3,
+          "previous_manifest": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+          "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+          "action": "rollback",
+          "actor": "local",
+          "created": 1000.0,
+          "previous_hash": "1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444",
+          "entry_hash": "c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a"
+        },
+        "environment": {
+          "revision": 3,
+          "manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b"
+        },
+        "audit_chain_verified": 3,
+        "leased_blob": {
+          "sha256": "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920",
+          "size": 23,
+          "lease_id": "5cb3af6f56a44f09b9000f7fef721d09",
+          "lease_expires_at": 1005.0
+        },
+        "gc_before_lease_expiry": {
+          "manifest_roots": 4,
+          "reachable_manifests": 4,
+          "protected_blobs": 5,
+          "swept_blobs": [],
+          "retained_history_per_environment": 2,
+          "expired_leases_removed": 0
+        },
+        "gc_after_lease_expiry": {
+          "manifest_roots": 4,
+          "reachable_manifests": 4,
+          "protected_blobs": 4,
+          "swept_blobs": [
+            "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920"
+          ],
+          "retained_history_per_environment": 2,
+          "expired_leases_removed": 1
+        },
+        "active_model_verified": {
+          "sha256": "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069",
+          "size": 19,
+          "verified": true
+        },
+        "limitations": [
+          "This is a local artifact-control-plane experiment, not trained-model accuracy.",
+          "Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented."
+        ]
+      }
+    },
+    {
+      "name": "evaluate",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"experiment\": \"executed_filesystem_sqlite_registry_checks\",\n  \"case_count\": 8,\n  \"passed\": 8,\n  \"cases\": {\n    \"stream_digest\": true,\n    \"rollback_revision\": true,\n    \"audit_chain\": true,\n    \"active_lease_protected\": true,\n    \"expired_unreachable_swept\": true,\n    \"active_lineage_retained\": true,\n    \"concurrent_cas\": true,\n    \"corruption_detected\": true\n  },\n  \"promotion_race_outcomes\": [\n    \"committed\",\n    \"stale_revision\",\n    \"stale_revision\",\n    \"stale_revision\"\n  ],\n  \"wall_seconds\": 0.17452529299953312,\n  \"demo\": {\n    \"experiment\": \"actual_local_content_registry\",\n    \"model_inference_performed\": false,\n    \"dataset\": {\n      \"id\": \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"training-data\",\n        \"kind\": \"dataset\",\n        \"version\": 1,\n        \"blobs\": [\n          \"e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30\"\n        ],\n        \"parents\": [],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"e197b9acbfc343b3b00dc49f11222531\",\n      \"lease_expires_at\": 1300.0\n    },\n    \"configuration\": {\n      \"id\": \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"training-config\",\n        \"kind\": \"config\",\n        \"version\": 1,\n        \"blobs\": [\n          \"c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6\"\n        ],\n        \"parents\": [],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"89c1cb5ab5b045d5ba6760695726e549\",\n      \"lease_expires_at\": 1300.0\n    },\n    \"model_versions\": [\n      {\n        \"id\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n        \"payload\": {\n          \"schema_version\": 1,\n          \"name\": \"classifier\",\n          \"kind\": \"model\",\n          \"version\": 1,\n          \"blobs\": [\n            \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\"\n          ],\n          \"parents\": [\n            \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n            \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n          ],\n          \"metadata\": {}\n        },\n        \"lease_id\": \"60081a03c56a43d5aa27a72c3a3c5639\",\n        \"lease_expires_at\": 1300.0\n      },\n      {\n        \"id\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n        \"payload\": {\n          \"schema_version\": 1,\n          \"name\": \"classifier\",\n          \"kind\": \"model\",\n          \"version\": 2,\n          \"blobs\": [\n            \"96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c\"\n          ],\n          \"parents\": [\n            \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n            \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n          ],\n          \"metadata\": {}\n        },\n        \"lease_id\": \"090ad734d41e4376961320b150c62f58\",\n        \"lease_expires_at\": 1300.0\n      }\n    ],\n    \"first_release\": {\n      \"environment\": \"production\",\n      \"revision\": 1,\n      \"previous_manifest\": null,\n      \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n      \"action\": \"promote\",\n      \"actor\": \"local\",\n      \"created\": 1000.0,\n      \"previous_hash\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n      \"entry_hash\": \"10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd\"\n    },\n    \"rollback\": {\n      \"environment\": \"production\",\n      \"revision\": 3,\n      \"previous_manifest\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n      \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n      \"action\": \"rollback\",\n      \"actor\": \"local\",\n      \"created\": 1000.0,\n      \"previous_hash\": \"1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444\",\n      \"entry_hash\": \"c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a\"\n    },\n    \"environment\": {\n      \"revision\": 3,\n      \"manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\"\n    },\n    \"audit_chain_verified\": 3,\n    \"leased_blob\": {\n      \"sha256\": \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\",\n      \"size\": 23,\n      \"lease_id\": \"9f2af94826e54e9ba626a5d7ceebbbf0\",\n      \"lease_expires_at\": 1005.0\n    },\n    \"gc_before_lease_expiry\": {\n      \"manifest_roots\": 4,\n      \"reachable_manifests\": 4,\n      \"protected_blobs\": 5,\n      \"swept_blobs\": [],\n      \"retained_history_per_environment\": 2,\n      \"expired_leases_removed\": 0\n    },\n    \"gc_after_lease_expiry\": {\n      \"manifest_roots\": 4,\n      \"reachable_manifests\": 4,\n      \"protected_blobs\": 4,\n      \"swept_blobs\": [\n        \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\"\n      ],\n      \"retained_history_per_environment\": 2,\n      \"expired_leases_removed\": 1\n    },\n    \"active_model_verified\": {\n      \"sha256\": \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\",\n      \"size\": 19,\n      \"verified\": true\n    },\n    \"limitations\": [\n      \"This is a local artifact-control-plane experiment, not trained-model accuracy.\",\n      \"Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented.\"\n    ]\n  },\n  \"limits\": [\n    \"Process-crash injection and quarantine recovery are additionally exercised by the test suite.\",\n    \"One local run does not establish distributed scalability or power-loss durability.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "model_ledger",
+        "evaluate",
+        "--output",
+        "/tmp/cli-reports-12nwtg4a/evaluate.json"
+      ],
+      "seconds": 0.423232,
+      "report": {
+        "experiment": "executed_filesystem_sqlite_registry_checks",
+        "case_count": 8,
+        "passed": 8,
+        "cases": {
+          "stream_digest": true,
+          "rollback_revision": true,
+          "audit_chain": true,
+          "active_lease_protected": true,
+          "expired_unreachable_swept": true,
+          "active_lineage_retained": true,
+          "concurrent_cas": true,
+          "corruption_detected": true
+        },
+        "promotion_race_outcomes": [
+          "committed",
+          "stale_revision",
+          "stale_revision",
+          "stale_revision"
+        ],
+        "wall_seconds": 0.17452529299953312,
+        "demo": {
+          "experiment": "actual_local_content_registry",
+          "model_inference_performed": false,
+          "dataset": {
+            "id": "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99",
+            "payload": {
+              "schema_version": 1,
+              "name": "training-data",
+              "kind": "dataset",
+              "version": 1,
+              "blobs": [
+                "e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30"
+              ],
+              "parents": [],
+              "metadata": {}
+            },
+            "lease_id": "e197b9acbfc343b3b00dc49f11222531",
+            "lease_expires_at": 1300.0
+          },
+          "configuration": {
+            "id": "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+            "payload": {
+              "schema_version": 1,
+              "name": "training-config",
+              "kind": "config",
+              "version": 1,
+              "blobs": [
+                "c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6"
+              ],
+              "parents": [],
+              "metadata": {}
+            },
+            "lease_id": "89c1cb5ab5b045d5ba6760695726e549",
+            "lease_expires_at": 1300.0
+          },
+          "model_versions": [
+            {
+              "id": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+              "payload": {
+                "schema_version": 1,
+                "name": "classifier",
+                "kind": "model",
+                "version": 1,
+                "blobs": [
+                  "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069"
+                ],
+                "parents": [
+                  "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                  "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+                ],
+                "metadata": {}
+              },
+              "lease_id": "60081a03c56a43d5aa27a72c3a3c5639",
+              "lease_expires_at": 1300.0
+            },
+            {
+              "id": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+              "payload": {
+                "schema_version": 1,
+                "name": "classifier",
+                "kind": "model",
+                "version": 2,
+                "blobs": [
+                  "96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c"
+                ],
+                "parents": [
+                  "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                  "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+                ],
+                "metadata": {}
+              },
+              "lease_id": "090ad734d41e4376961320b150c62f58",
+              "lease_expires_at": 1300.0
+            }
+          ],
+          "first_release": {
+            "environment": "production",
+            "revision": 1,
+            "previous_manifest": null,
+            "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+            "action": "promote",
+            "actor": "local",
+            "created": 1000.0,
+            "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "entry_hash": "10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd"
+          },
+          "rollback": {
+            "environment": "production",
+            "revision": 3,
+            "previous_manifest": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+            "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+            "action": "rollback",
+            "actor": "local",
+            "created": 1000.0,
+            "previous_hash": "1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444",
+            "entry_hash": "c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a"
+          },
+          "environment": {
+            "revision": 3,
+            "manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b"
+          },
+          "audit_chain_verified": 3,
+          "leased_blob": {
+            "sha256": "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920",
+            "size": 23,
+            "lease_id": "9f2af94826e54e9ba626a5d7ceebbbf0",
+            "lease_expires_at": 1005.0
+          },
+          "gc_before_lease_expiry": {
+            "manifest_roots": 4,
+            "reachable_manifests": 4,
+            "protected_blobs": 5,
+            "swept_blobs": [],
+            "retained_history_per_environment": 2,
+            "expired_leases_removed": 0
+          },
+          "gc_after_lease_expiry": {
+            "manifest_roots": 4,
+            "reachable_manifests": 4,
+            "protected_blobs": 4,
+            "swept_blobs": [
+              "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920"
+            ],
+            "retained_history_per_environment": 2,
+            "expired_leases_removed": 1
+          },
+          "active_model_verified": {
+            "sha256": "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069",
+            "size": 19,
+            "verified": true
+          },
+          "limitations": [
+            "This is a local artifact-control-plane experiment, not trained-model accuracy.",
+            "Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented."
+          ]
+        },
+        "limits": [
+          "Process-crash injection and quarantine recovery are additionally exercised by the test suite.",
+          "One local run does not establish distributed scalability or power-loss durability."
+        ]
+      }
+    },
+    {
+      "name": "wheel_build",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "Processing /workspace/ai-adjacent-repositories/model-ledger\n  Preparing metadata (pyproject.toml): started\n  Preparing metadata (pyproject.toml): finished with status 'done'\nBuilding wheels for collected packages: model-ledger\n  Building wheel for model-ledger (pyproject.toml): started\n  Building wheel for model-ledger (pyproject.toml): finished with status 'done'\n  Created wheel for model-ledger: filename=model_ledger-0.1.0-py3-none-any.whl size=13770 sha256=d15945636aede60670f71d4b700a21448a820a4e2da8652eb10e94ae94107cb9\n  Stored in directory: /home/agent/.cache/pip/wheels/d2/18/93/5e7a45ee30f531c2b50c9c6aab165fd17909ab532552e2955a\nSuccessfully built model-ledger\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/workspace/applied-ai-labs/.venv/bin/python",
+        "-m",
+        "pip",
+        "wheel",
+        "--no-deps",
+        "--no-build-isolation",
+        "--no-index",
+        "--wheel-dir",
+        "/tmp/cold-wheel-p4vpwwfr/wheels",
+        "."
+      ],
+      "seconds": 3.176359
+    },
+    {
+      "name": "wheel_install",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "Processing ./wheels/model_ledger-0.1.0-py3-none-any.whl\nInstalling collected packages: model-ledger\nSuccessfully installed model-ledger-0.1.0\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-p4vpwwfr/environment/bin/python",
+        "-I",
+        "-m",
+        "pip",
+        "install",
+        "--no-deps",
+        "--no-index",
+        "/tmp/cold-wheel-p4vpwwfr/wheels/model_ledger-0.1.0-py3-none-any.whl"
+      ],
+      "seconds": 0.520158
+    },
+    {
+      "name": "wheel_import_origin",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "/tmp/cold-wheel-p4vpwwfr/environment/lib/python3.12/site-packages/model_ledger/__init__.py\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-p4vpwwfr/environment/bin/python",
+        "-I",
+        "-c",
+        "import model_ledger as module; import sys; from pathlib import Path; assert Path(module.__file__).resolve().is_relative_to(Path(sys.prefix).resolve()); print(module.__file__)"
+      ],
+      "seconds": 0.130947
+    },
+    {
+      "name": "wheel_demo",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"experiment\": \"actual_local_content_registry\",\n  \"model_inference_performed\": false,\n  \"dataset\": {\n    \"id\": \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\",\n    \"payload\": {\n      \"schema_version\": 1,\n      \"name\": \"training-data\",\n      \"kind\": \"dataset\",\n      \"version\": 1,\n      \"blobs\": [\n        \"e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30\"\n      ],\n      \"parents\": [],\n      \"metadata\": {}\n    },\n    \"lease_id\": \"14a562d4a91845a1aba29e6e24ca7022\",\n    \"lease_expires_at\": 1300.0\n  },\n  \"configuration\": {\n    \"id\": \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n    \"payload\": {\n      \"schema_version\": 1,\n      \"name\": \"training-config\",\n      \"kind\": \"config\",\n      \"version\": 1,\n      \"blobs\": [\n        \"c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6\"\n      ],\n      \"parents\": [],\n      \"metadata\": {}\n    },\n    \"lease_id\": \"82ca585663ad4cd4b01bf2b255b8c77b\",\n    \"lease_expires_at\": 1300.0\n  },\n  \"model_versions\": [\n    {\n      \"id\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"classifier\",\n        \"kind\": \"model\",\n        \"version\": 1,\n        \"blobs\": [\n          \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\"\n        ],\n        \"parents\": [\n          \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n          \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n        ],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"f30e976211d24d1a87a6f33e1005de69\",\n      \"lease_expires_at\": 1300.0\n    },\n    {\n      \"id\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"classifier\",\n        \"kind\": \"model\",\n        \"version\": 2,\n        \"blobs\": [\n          \"96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c\"\n        ],\n        \"parents\": [\n          \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n          \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n        ],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"9f72c719d4dc48699a552b7ddf87eb33\",\n      \"lease_expires_at\": 1300.0\n    }\n  ],\n  \"first_release\": {\n    \"environment\": \"production\",\n    \"revision\": 1,\n    \"previous_manifest\": null,\n    \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n    \"action\": \"promote\",\n    \"actor\": \"local\",\n    \"created\": 1000.0,\n    \"previous_hash\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n    \"entry_hash\": \"10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd\"\n  },\n  \"rollback\": {\n    \"environment\": \"production\",\n    \"revision\": 3,\n    \"previous_manifest\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n    \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n    \"action\": \"rollback\",\n    \"actor\": \"local\",\n    \"created\": 1000.0,\n    \"previous_hash\": \"1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444\",\n    \"entry_hash\": \"c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a\"\n  },\n  \"environment\": {\n    \"revision\": 3,\n    \"manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\"\n  },\n  \"audit_chain_verified\": 3,\n  \"leased_blob\": {\n    \"sha256\": \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\",\n    \"size\": 23,\n    \"lease_id\": \"5d73c8dd73c648519f654e36c840cba9\",\n    \"lease_expires_at\": 1005.0\n  },\n  \"gc_before_lease_expiry\": {\n    \"manifest_roots\": 4,\n    \"reachable_manifests\": 4,\n    \"protected_blobs\": 5,\n    \"swept_blobs\": [],\n    \"retained_history_per_environment\": 2,\n    \"expired_leases_removed\": 0\n  },\n  \"gc_after_lease_expiry\": {\n    \"manifest_roots\": 4,\n    \"reachable_manifests\": 4,\n    \"protected_blobs\": 4,\n    \"swept_blobs\": [\n      \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\"\n    ],\n    \"retained_history_per_environment\": 2,\n    \"expired_leases_removed\": 1\n  },\n  \"active_model_verified\": {\n    \"sha256\": \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\",\n    \"size\": 19,\n    \"verified\": true\n  },\n  \"limitations\": [\n    \"This is a local artifact-control-plane experiment, not trained-model accuracy.\",\n    \"Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-p4vpwwfr/environment/bin/python",
+        "-I",
+        "-m",
+        "model_ledger",
+        "demo",
+        "--output",
+        "/tmp/cli-reports-hoy_v5ge/demo.json"
+      ],
+      "seconds": 0.195263,
+      "report": {
+        "experiment": "actual_local_content_registry",
+        "model_inference_performed": false,
+        "dataset": {
+          "id": "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99",
+          "payload": {
+            "schema_version": 1,
+            "name": "training-data",
+            "kind": "dataset",
+            "version": 1,
+            "blobs": [
+              "e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30"
+            ],
+            "parents": [],
+            "metadata": {}
+          },
+          "lease_id": "14a562d4a91845a1aba29e6e24ca7022",
+          "lease_expires_at": 1300.0
+        },
+        "configuration": {
+          "id": "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+          "payload": {
+            "schema_version": 1,
+            "name": "training-config",
+            "kind": "config",
+            "version": 1,
+            "blobs": [
+              "c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6"
+            ],
+            "parents": [],
+            "metadata": {}
+          },
+          "lease_id": "82ca585663ad4cd4b01bf2b255b8c77b",
+          "lease_expires_at": 1300.0
+        },
+        "model_versions": [
+          {
+            "id": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+            "payload": {
+              "schema_version": 1,
+              "name": "classifier",
+              "kind": "model",
+              "version": 1,
+              "blobs": [
+                "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069"
+              ],
+              "parents": [
+                "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+              ],
+              "metadata": {}
+            },
+            "lease_id": "f30e976211d24d1a87a6f33e1005de69",
+            "lease_expires_at": 1300.0
+          },
+          {
+            "id": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+            "payload": {
+              "schema_version": 1,
+              "name": "classifier",
+              "kind": "model",
+              "version": 2,
+              "blobs": [
+                "96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c"
+              ],
+              "parents": [
+                "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+              ],
+              "metadata": {}
+            },
+            "lease_id": "9f72c719d4dc48699a552b7ddf87eb33",
+            "lease_expires_at": 1300.0
+          }
+        ],
+        "first_release": {
+          "environment": "production",
+          "revision": 1,
+          "previous_manifest": null,
+          "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+          "action": "promote",
+          "actor": "local",
+          "created": 1000.0,
+          "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+          "entry_hash": "10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd"
+        },
+        "rollback": {
+          "environment": "production",
+          "revision": 3,
+          "previous_manifest": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+          "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+          "action": "rollback",
+          "actor": "local",
+          "created": 1000.0,
+          "previous_hash": "1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444",
+          "entry_hash": "c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a"
+        },
+        "environment": {
+          "revision": 3,
+          "manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b"
+        },
+        "audit_chain_verified": 3,
+        "leased_blob": {
+          "sha256": "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920",
+          "size": 23,
+          "lease_id": "5d73c8dd73c648519f654e36c840cba9",
+          "lease_expires_at": 1005.0
+        },
+        "gc_before_lease_expiry": {
+          "manifest_roots": 4,
+          "reachable_manifests": 4,
+          "protected_blobs": 5,
+          "swept_blobs": [],
+          "retained_history_per_environment": 2,
+          "expired_leases_removed": 0
+        },
+        "gc_after_lease_expiry": {
+          "manifest_roots": 4,
+          "reachable_manifests": 4,
+          "protected_blobs": 4,
+          "swept_blobs": [
+            "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920"
+          ],
+          "retained_history_per_environment": 2,
+          "expired_leases_removed": 1
+        },
+        "active_model_verified": {
+          "sha256": "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069",
+          "size": 19,
+          "verified": true
+        },
+        "limitations": [
+          "This is a local artifact-control-plane experiment, not trained-model accuracy.",
+          "Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented."
+        ]
+      }
+    },
+    {
+      "name": "wheel_evaluate",
+      "passed": true,
+      "returncode": 0,
+      "stdout": "{\n  \"experiment\": \"executed_filesystem_sqlite_registry_checks\",\n  \"case_count\": 8,\n  \"passed\": 8,\n  \"cases\": {\n    \"stream_digest\": true,\n    \"rollback_revision\": true,\n    \"audit_chain\": true,\n    \"active_lease_protected\": true,\n    \"expired_unreachable_swept\": true,\n    \"active_lineage_retained\": true,\n    \"concurrent_cas\": true,\n    \"corruption_detected\": true\n  },\n  \"promotion_race_outcomes\": [\n    \"committed\",\n    \"stale_revision\",\n    \"stale_revision\",\n    \"stale_revision\"\n  ],\n  \"wall_seconds\": 0.12271259299996018,\n  \"demo\": {\n    \"experiment\": \"actual_local_content_registry\",\n    \"model_inference_performed\": false,\n    \"dataset\": {\n      \"id\": \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"training-data\",\n        \"kind\": \"dataset\",\n        \"version\": 1,\n        \"blobs\": [\n          \"e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30\"\n        ],\n        \"parents\": [],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"eedaf6db798b4a9baee349b6e292d429\",\n      \"lease_expires_at\": 1300.0\n    },\n    \"configuration\": {\n      \"id\": \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n      \"payload\": {\n        \"schema_version\": 1,\n        \"name\": \"training-config\",\n        \"kind\": \"config\",\n        \"version\": 1,\n        \"blobs\": [\n          \"c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6\"\n        ],\n        \"parents\": [],\n        \"metadata\": {}\n      },\n      \"lease_id\": \"07b9573e8eaa4778b15189fb192cdbd7\",\n      \"lease_expires_at\": 1300.0\n    },\n    \"model_versions\": [\n      {\n        \"id\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n        \"payload\": {\n          \"schema_version\": 1,\n          \"name\": \"classifier\",\n          \"kind\": \"model\",\n          \"version\": 1,\n          \"blobs\": [\n            \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\"\n          ],\n          \"parents\": [\n            \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n            \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n          ],\n          \"metadata\": {}\n        },\n        \"lease_id\": \"9498598bb8bb426c9e6755b02a531308\",\n        \"lease_expires_at\": 1300.0\n      },\n      {\n        \"id\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n        \"payload\": {\n          \"schema_version\": 1,\n          \"name\": \"classifier\",\n          \"kind\": \"model\",\n          \"version\": 2,\n          \"blobs\": [\n            \"96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c\"\n          ],\n          \"parents\": [\n            \"622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b\",\n            \"f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99\"\n          ],\n          \"metadata\": {}\n        },\n        \"lease_id\": \"594c94677f0145258bb7872a24e54e91\",\n        \"lease_expires_at\": 1300.0\n      }\n    ],\n    \"first_release\": {\n      \"environment\": \"production\",\n      \"revision\": 1,\n      \"previous_manifest\": null,\n      \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n      \"action\": \"promote\",\n      \"actor\": \"local\",\n      \"created\": 1000.0,\n      \"previous_hash\": \"0000000000000000000000000000000000000000000000000000000000000000\",\n      \"entry_hash\": \"10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd\"\n    },\n    \"rollback\": {\n      \"environment\": \"production\",\n      \"revision\": 3,\n      \"previous_manifest\": \"98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94\",\n      \"target_manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\",\n      \"action\": \"rollback\",\n      \"actor\": \"local\",\n      \"created\": 1000.0,\n      \"previous_hash\": \"1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444\",\n      \"entry_hash\": \"c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a\"\n    },\n    \"environment\": {\n      \"revision\": 3,\n      \"manifest\": \"32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b\"\n    },\n    \"audit_chain_verified\": 3,\n    \"leased_blob\": {\n      \"sha256\": \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\",\n      \"size\": 23,\n      \"lease_id\": \"69b2f0f4b90349038b5e318c06a0824f\",\n      \"lease_expires_at\": 1005.0\n    },\n    \"gc_before_lease_expiry\": {\n      \"manifest_roots\": 4,\n      \"reachable_manifests\": 4,\n      \"protected_blobs\": 5,\n      \"swept_blobs\": [],\n      \"retained_history_per_environment\": 2,\n      \"expired_leases_removed\": 0\n    },\n    \"gc_after_lease_expiry\": {\n      \"manifest_roots\": 4,\n      \"reachable_manifests\": 4,\n      \"protected_blobs\": 4,\n      \"swept_blobs\": [\n        \"4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920\"\n      ],\n      \"retained_history_per_environment\": 2,\n      \"expired_leases_removed\": 1\n    },\n    \"active_model_verified\": {\n      \"sha256\": \"f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069\",\n      \"size\": 19,\n      \"verified\": true\n    },\n    \"limitations\": [\n      \"This is a local artifact-control-plane experiment, not trained-model accuracy.\",\n      \"Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented.\"\n    ]\n  },\n  \"limits\": [\n    \"Process-crash injection and quarantine recovery are additionally exercised by the test suite.\",\n    \"One local run does not establish distributed scalability or power-loss durability.\"\n  ]\n}\n",
+      "stdout_truncated": false,
+      "stderr": "",
+      "stderr_truncated": false,
+      "command": [
+        "/tmp/cold-wheel-p4vpwwfr/environment/bin/python",
+        "-I",
+        "-m",
+        "model_ledger",
+        "evaluate",
+        "--output",
+        "/tmp/cli-reports-hoy_v5ge/evaluate.json"
+      ],
+      "seconds": 0.249889,
+      "report": {
+        "experiment": "executed_filesystem_sqlite_registry_checks",
+        "case_count": 8,
+        "passed": 8,
+        "cases": {
+          "stream_digest": true,
+          "rollback_revision": true,
+          "audit_chain": true,
+          "active_lease_protected": true,
+          "expired_unreachable_swept": true,
+          "active_lineage_retained": true,
+          "concurrent_cas": true,
+          "corruption_detected": true
+        },
+        "promotion_race_outcomes": [
+          "committed",
+          "stale_revision",
+          "stale_revision",
+          "stale_revision"
+        ],
+        "wall_seconds": 0.12271259299996018,
+        "demo": {
+          "experiment": "actual_local_content_registry",
+          "model_inference_performed": false,
+          "dataset": {
+            "id": "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99",
+            "payload": {
+              "schema_version": 1,
+              "name": "training-data",
+              "kind": "dataset",
+              "version": 1,
+              "blobs": [
+                "e99001bdb25c45d5603cc39794ebf14dc23f8d4717f76755b9296df452ec8a30"
+              ],
+              "parents": [],
+              "metadata": {}
+            },
+            "lease_id": "eedaf6db798b4a9baee349b6e292d429",
+            "lease_expires_at": 1300.0
+          },
+          "configuration": {
+            "id": "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+            "payload": {
+              "schema_version": 1,
+              "name": "training-config",
+              "kind": "config",
+              "version": 1,
+              "blobs": [
+                "c1413eb73e4536f6c187c373b4931a5594aba893b2eae584d69a4e19b2a894b6"
+              ],
+              "parents": [],
+              "metadata": {}
+            },
+            "lease_id": "07b9573e8eaa4778b15189fb192cdbd7",
+            "lease_expires_at": 1300.0
+          },
+          "model_versions": [
+            {
+              "id": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+              "payload": {
+                "schema_version": 1,
+                "name": "classifier",
+                "kind": "model",
+                "version": 1,
+                "blobs": [
+                  "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069"
+                ],
+                "parents": [
+                  "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                  "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+                ],
+                "metadata": {}
+              },
+              "lease_id": "9498598bb8bb426c9e6755b02a531308",
+              "lease_expires_at": 1300.0
+            },
+            {
+              "id": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+              "payload": {
+                "schema_version": 1,
+                "name": "classifier",
+                "kind": "model",
+                "version": 2,
+                "blobs": [
+                  "96f6cc366e550e7c47080f4825beab60e40d9509a23d41800dd0cd15d9f3283c"
+                ],
+                "parents": [
+                  "622c5f5dbff28c2d02311b2649f89a1580624344cb60c1f60028e99f65312a8b",
+                  "f3431b6f7d30ba607cc186a622c47b442c42df3db3da68d36ccb259ba8becb99"
+                ],
+                "metadata": {}
+              },
+              "lease_id": "594c94677f0145258bb7872a24e54e91",
+              "lease_expires_at": 1300.0
+            }
+          ],
+          "first_release": {
+            "environment": "production",
+            "revision": 1,
+            "previous_manifest": null,
+            "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+            "action": "promote",
+            "actor": "local",
+            "created": 1000.0,
+            "previous_hash": "0000000000000000000000000000000000000000000000000000000000000000",
+            "entry_hash": "10faa281a7fc7465a24d2487f33485c6193563cf6cc408eed36e97eeb875cadd"
+          },
+          "rollback": {
+            "environment": "production",
+            "revision": 3,
+            "previous_manifest": "98b306edeb4ca6f64231b7289286f6a35ab251e39c0f4df258538e2a058fba94",
+            "target_manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b",
+            "action": "rollback",
+            "actor": "local",
+            "created": 1000.0,
+            "previous_hash": "1cbe9939f414a596abc42c1499f899c07017e92fd997c2f771ff279ec7476444",
+            "entry_hash": "c82299ea793deeba6f764ace0a7f2592280b924c1dcdca4ad3a43ba8d8dd953a"
+          },
+          "environment": {
+            "revision": 3,
+            "manifest": "32db8a863faf685cca5c8aea340a5cea19a14f6525b375d4ad944ef9f4ee3e7b"
+          },
+          "audit_chain_verified": 3,
+          "leased_blob": {
+            "sha256": "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920",
+            "size": 23,
+            "lease_id": "69b2f0f4b90349038b5e318c06a0824f",
+            "lease_expires_at": 1005.0
+          },
+          "gc_before_lease_expiry": {
+            "manifest_roots": 4,
+            "reachable_manifests": 4,
+            "protected_blobs": 5,
+            "swept_blobs": [],
+            "retained_history_per_environment": 2,
+            "expired_leases_removed": 0
+          },
+          "gc_after_lease_expiry": {
+            "manifest_roots": 4,
+            "reachable_manifests": 4,
+            "protected_blobs": 4,
+            "swept_blobs": [
+              "4e3d550456f33b739f20c6689193b1bf703ea8cc5a9d621086cff16cf08d7920"
+            ],
+            "retained_history_per_environment": 2,
+            "expired_leases_removed": 1
+          },
+          "active_model_verified": {
+            "sha256": "f347b6e132647939a514e5e0afed9007a8c9540ea5ce2d1f991325b7566be069",
+            "size": 19,
+            "verified": true
+          },
+          "limitations": [
+            "This is a local artifact-control-plane experiment, not trained-model accuracy.",
+            "Private trusted filesystem and SQLite ownership are assumed; no cloud auth, signed provenance, or distributed replication is implemented."
+          ]
+        },
+        "limits": [
+          "Process-crash injection and quarantine recovery are additionally exercised by the test suite.",
+          "One local run does not establish distributed scalability or power-loss durability."
+        ]
+      }
+    }
+  ]
+}
